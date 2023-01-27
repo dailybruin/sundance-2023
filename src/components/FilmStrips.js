@@ -7,49 +7,66 @@ import {mediaQueries} from '../shared/config';
 
 const { mobile } = mediaQueries;
 
+// const Container = styled.div`
+//     width: 100vw;
+//     height: 100%;
+//     background-image: url(${Film});
+//     background-size: cover;
+    
+
+//     ${mobile}{
+//         width: 100%;
+//         height: auto;
+//         background-image: none !important;
+//         background-size: contain;
+//     };
+
+// `
+
 const Container = styled.div`
-    width: 100vw;
-    height: 100%;
+    width: 1472px;
+    height: 1814px;
+    overflow: visible;
     background-image: url(${Film});
-    background-size: contain;
-
-    ${mobile}{
-        
-        width: 100%;
-        height: auto;
-        background-image: none !important;
-        background-size: contain;
-
-    };
-
-
-`
+    position: relative;
+`;
 
 const Grid = styled.div`
     display: grid;
+    margin: auto;
+    max-width: 100%;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 17.51px;
-    row-gap: 30.875em;
-    /* overflow: visible; */
-    /* padding-top: 2.9375em; */
-    padding: 1em;
     overflow: visible;
-    padding-top: 2.9375em;
+    column-gap: 17px;
+    row-gap: 30.875em;
+    padding-top: 2.9374em;
+    position: sticky;
+    
+`;
 
-    ${mobile}{
-        display: grid;
-        background-image: url(${FilmMobile});
-        margin-top: 10px
-        margin-bottom: 10px;
-        height: auto;
-        column-gap: 10px;
-        row-gap: 90px;
-        grid-template-columns: auto;
-        grid-template-rows: fit content(100%);
-        align-items: center;
-    };
+// const Grid = styled.div`
+//     display: grid;
+//     grid-template-columns: repeat(4, 1fr);
+//     column-gap: 17.51px;
+//     row-gap: 30.875em;
+//     overflow: visible;
+//     padding-top: 2.9375em;
+//     max-width: 100%;
+//     /* padding: 1em; */
 
-`
+//     ${mobile}{
+//         display: grid;
+//         background-image: url(${FilmMobile});
+//         margin-top: 10px
+//         margin-bottom: 10px;
+//         height: auto;
+//         column-gap: 10px;
+//         row-gap: 90px;
+//         grid-template-columns: auto;
+//         grid-template-rows: fit content(100%);
+//         align-items: center;
+//     };
+// `
 
 const FilmStrips = ({articles}) => {
     return (
