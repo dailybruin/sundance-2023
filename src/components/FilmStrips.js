@@ -1,14 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
 import Film from '../images/FilmStrips.svg'
+import FilmMobile from '../images/FilmMobile.svg'
 import ArticleCard from './ArticleCard';
-import { mediaQueries } from '../shared/config';
+import {mediaQueries} from '../shared/config';
+
+const { mobile } = mediaQueries;
 
 const Container = styled.div`
     width: 1472px;
     height: 1814.03px;
+    padding-top: 5%;
     background-image: url(${Film});
     background-size: contain;
+
+    ${mobile}{
+        
+        width: 100%;
+        height: auto;
+        background-image: none !important;
+        background-size: contain;
+
+    };
+
+
 `
 
 const Grid = styled.div`
@@ -20,6 +35,20 @@ const Grid = styled.div`
     row-gap: 30.875em;
     overflow: visible;
     padding-top: 2.9375em;
+
+    ${mobile}{
+        display: grid;
+        background-image: url(${FilmMobile});
+        margin-top: 10px
+        margin-bottom: 10px;
+        height: auto;
+        column-gap: 10px;
+        row-gap: 90px;
+        grid-template-columns: auto;
+        grid-template-rows: fit content(100%);
+        align-items: center;
+    };
+
 `
 
 const FilmStrips = ({articles}) => {
