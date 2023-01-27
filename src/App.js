@@ -20,7 +20,7 @@ function App() {
     <div className="App">
       <Header/>
       Hello Daily Bruin!
-      <DescriptionBox/>
+      <DescriptionBox description_box={data.description_box}/>
       <Footer/>
     </div>
   );
