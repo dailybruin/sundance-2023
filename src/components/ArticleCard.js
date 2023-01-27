@@ -5,72 +5,58 @@ import { mediaQueries } from '../shared/config';
 export default function ArticleCard(props){
 
     const Title = styled.div`
-        position: absolute;
-        left: 33.5px;
-        right: 59.9px;
-        top: 27.45 px;
-        bottom: 73.21px;
-        width: 238.59px;
-        height: 142.34px;
-        font-family: 'Sofia Sans';
-        font-style: normal;
-        font-weight: 900;
+        display: block;
+        font-weight: 800;
         font-size: 28px;
-        line-height: 28px;
-        display: flex;
+        padding: 1em 1em 0.5em 1em;
+        line-height: 1em;
         text-align: left;
         letter-spacing: -0.05em;
-        color: #FFFFFF;
+        color: white;
         opacity: 0;
     `
     const Author = styled.div`
-        position: absolute;
-        width: 238.59px;
-        height: 142.34px;
-        left: 25px;
-        top: 176.91px;
-        bottom: 22.37px;
-        font-family: 'Sofia Sans';
-        font-style: normal;
+        text-align: left;
+        padding: 1em;
         font-weight: 400;
         font-size: 24px;
-        line-height: 29px;
-        display: flex;
-        text-align: center;
         letter-spacing: -0.05em;
-        color: #FFFFFF;
-        opacity:0;
+        color: white;
+        opacity: 0;
     `
     const Container = styled.div`
-        position: relative;
-        width: 332px;
+        /* position: relative; */
+        width: 100%;
         height: 243px;
         border-radius: 10px;
-        background-image: url("https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_4x3.jpg");
-        background-size: 332px;
+        background-image: url(${props.article_image});
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-family: 'Sofia Sans', sans-serif;
+
         &:hover{
             transition: 0.3s;
             background-color: rgba(0, 0, 0, 0.7);
             background-blend-mode: multiply;
             ${Title} {
                 transition: 0.3s;
-                opacity:1;
+                opacity: 1;
             }
             ${Author} {
                 transition: 0.3s;
-                opacity:1;
+                opacity: 1;
             }
-
         }
 
     `
 
     return(
         <Container>
-            <a href={props.article_url}>
-                <Title> Title {props.article_title}</Title>
+            <a style={{textDecoration: "none"}} href={props.article_url}>
+                <Title> {props.article_title}</Title>
             </a>
-            <Author>author{props.article_byline} </Author>
+            <Author> Author {props.article_byline} </Author>
         </Container>
     )
 }

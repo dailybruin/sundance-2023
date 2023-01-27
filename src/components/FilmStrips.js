@@ -5,21 +5,20 @@ import ArticleCard from './ArticleCard';
 import { mediaQueries } from '../shared/config';
 
 const Container = styled.div`
-    width: 1472px;
-    height: 1814.03px;
+    width: 100vw;
+    height: 100%;
     background-image: url(${Film});
     background-size: contain;
 `
 
 const Grid = styled.div`
     display: grid;
-    margin: auto;
-    width: 100%;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 17.51px;
     row-gap: 30.875em;
-    overflow: visible;
-    padding-top: 2.9375em;
+    /* overflow: visible; */
+    /* padding-top: 2.9375em; */
+    padding: 1em;
 `
 
 const FilmStrips = ({articles}) => {
