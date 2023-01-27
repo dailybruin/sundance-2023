@@ -44,7 +44,7 @@ export default function ArticleCard(props){
         width: 332px;
         height: 243px;
         border-radius: 10px;
-        background-image: url("https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_4x3.jpg");
+        background-image: url(${props.article_image});
         background-size: 100%;
         &:hover{
             transition: 0.3s;
@@ -66,9 +66,9 @@ export default function ArticleCard(props){
     return(
         <Container>
             <a href={props.article_url}>
-                <Title> Title {props.article_title}</Title>
+                <Title>{props.article_title}</Title>
             </a>
-            <Author>author{props.article_byline} </Author>
+            <Author>{props.article_byline} </Author>
         </Container>
     )
 }
