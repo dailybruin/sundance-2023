@@ -10,22 +10,21 @@ export default function ArticleCard(props){
         font-size: 28px;
         padding: 1em 1em 0.5em 1em;
         line-height: 1em;
-        text-align: left;
         letter-spacing: -0.05em;
         color: white;
         opacity: 0;
     `
     const Author = styled.div`
-        text-align: left;
-        padding: 1em;
+        display: block;
+        margin-left: 1.5em;
         font-weight: 400;
-        font-size: 24px;
+        font-size: 20px;
         letter-spacing: -0.05em;
         color: white;
         opacity: 0;
     `
     const Container = styled.div`
-        /* position: relative; */
+        display: block;
         width: 100%;
         height: 243px;
         border-radius: 10px;
@@ -34,6 +33,8 @@ export default function ArticleCard(props){
         background-size: cover;
         background-repeat: no-repeat;
         font-family: 'Sofia Sans', sans-serif;
+        text-align: left;
+        box-sizing: border-box;
 
         &:hover{
             transition: 0.3s;
@@ -48,12 +49,11 @@ export default function ArticleCard(props){
                 opacity: 1;
             }
         }
-
     `
 
     return(
         <Container>
-            <a style={{textDecoration: "none"}} href={props.article_url}>
+            <a style={{textDecoration: "none", marginLeft: 0}} href={props.article_url}>
                 <Title> {props.article_title}</Title>
             </a>
             <Author> Author {props.article_byline} </Author>

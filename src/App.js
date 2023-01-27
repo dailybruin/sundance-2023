@@ -4,6 +4,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import LandingImage from "./components/LandingImage";
+import FilmStrips from "./components/FilmStrips";
 import gradientBackground from "./images/Desktop.svg";
 const Container = styled.div`
   background-image: url(${gradientBackground});

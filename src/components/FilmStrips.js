@@ -7,42 +7,51 @@ import {mediaQueries} from '../shared/config';
 
 const { mobile } = mediaQueries;
 
-// const Container = styled.div`
-//     width: 100vw;
-//     height: 100%;
-//     background-image: url(${Film});
-//     background-size: cover;
-    
-
-//     ${mobile}{
-//         width: 100%;
-//         height: auto;
-//         background-image: none !important;
-//         background-size: contain;
-//     };
-
-// `
-
 const Container = styled.div`
-    width: 1472px;
+    /* width: 1472px; */
+    width: 100%;
+    /* max-width: 100%; */
     height: 1814px;
     overflow: visible;
     background-image: url(${Film});
-    position: relative;
+    background-image: no-repeat;
+    background-image: cover;
+    position: static;
 `;
 
 const Grid = styled.div`
     display: grid;
-    margin: auto;
-    max-width: 100%;
+    width: 100%;
     grid-template-columns: repeat(4, 1fr);
-    overflow: visible;
-    column-gap: 17px;
+    /* overflow: visible; */
+    column-gap: 2em;
     row-gap: 30.875em;
-    padding-top: 2.9374em;
-    position: sticky;
-    
+    padding-top: 1.3em;
+    /* position: sticky; */
 `;
+
+const FilmStrips = ({articles}) => {
+    return (
+        <Container >
+            <Grid>  
+              {articles ? articles.map((item) => {
+                      return (
+                          <ArticleCard
+                          article_title={item.article_title}
+                          article_byline={item.article_byline}
+                          article_image={item.article_image}
+                          article_url={item.article_url}
+                          color={item.color}
+                      />
+                      );
+                  })
+              : null}
+          </Grid>
+        </Container>
+    );
+}
+export default FilmStrips;
+
 
 // const Grid = styled.div`
 //     display: grid;
@@ -68,24 +77,18 @@ const Grid = styled.div`
 //     };
 // `
 
-const FilmStrips = ({articles}) => {
-    return (
-        <Container >
-            <Grid>  
-              {articles ? articles.map((item) => {
-                      return (
-                          <ArticleCard
-                          article_title={item.article_title}
-                          article_byline={item.article_byline}
-                          article_image={item.article_image}
-                          article_url={item.article_url}
-                          color={item.color}
-                      />
-                      );
-                  })
-              : null}
-          </Grid>
-        </Container>
-    );
-}
-export default FilmStrips;
+// const Container = styled.div`
+//     width: 100vw;
+//     height: 100%;
+//     background-image: url(${Film});
+//     background-size: cover;
+    
+
+//     ${mobile}{
+//         width: 100%;
+//         height: auto;
+//         background-image: none !important;
+//         background-size: contain;
+//     };
+
+// `
