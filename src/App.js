@@ -3,6 +3,7 @@ import styled from "styled-components";
 import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import LandingImage from "./components/LandingImage";
 import gradientBackground from "./images/Desktop.svg";
 const Container = styled.div`
   background-image: url(${gradientBackground});
@@ -23,13 +24,15 @@ function App() {
   data && console.log(data);
 
   return (
-    <Container>
-      <div className="App">
-        <Header />
-        Hello Daily Bruin!
-        <Footer />
-      </div>
-    </Container>
+    data && (
+      <Container>
+        <div className="App">
+          <Header />
+          <LandingImage data={data} />
+          <Footer />
+        </div>
+      </Container>
+    )
   );
 }
 
