@@ -6,40 +6,38 @@ export default function ArticleCard(props){
 
     const Title = styled.div`
         position: absolute;
-        left: 33.5px;
-        right: 59.9px;
-        top: 27.45 px;
-        bottom: 73.21px;
-        width: 238.59px;
-        height: 142.34px;
+        left: 0;
+        top: 0;
+        padding: 1em;
         font-family: 'Sofia Sans';
-        font-style: normal;
         font-weight: 900;
         font-size: 28px;
-        line-height: 28px;
-        display: flex;
+        line-height: 1em;
+        display: block;
         text-align: left;
-        letter-spacing: -0.05em;
         color: #FFFFFF;
         opacity: 0;
+        ${mediaQueries.mobile} {
+            font-size: 18px;
+        }
     `
     const Author = styled.div`
         position: absolute;
-        width: 238.59px;
-        height: 142.34px;
-        left: 25px;
-        top: 176.91px;
-        bottom: 22.37px;
+        left: 0;
+        bottom: 0;
+        padding-left: .9em;
+        padding-bottom: 1.5em;
         font-family: 'Sofia Sans';
-        font-style: normal;
         font-weight: 400;
         font-size: 24px;
-        line-height: 29px;
-        display: flex;
+        line-height: 1.036em;
+        display: block;
         text-align: center;
-        letter-spacing: -0.05em;
         color: #FFFFFF;
-        opacity:0;
+        opacity: 0;
+        ${mediaQueries.mobile} {
+            font-size: 16px;
+        }
     `
     const Container = styled.div`
         position: relative;
@@ -47,7 +45,7 @@ export default function ArticleCard(props){
         height: 243px;
         border-radius: 10px;
         background-image: url("https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_4x3.jpg");
-        background-size: 332px;
+        background-size: 100%;
         &:hover{
             transition: 0.3s;
             background-color: rgba(0, 0, 0, 0.7);
@@ -60,11 +58,11 @@ export default function ArticleCard(props){
                 transition: 0.3s;
                 opacity:1;
             }
-
         }
-
+        ${mediaQueries.mobile} {
+            width: 90vw;
+        }
     `
-
     return(
         <Container>
             <a href={props.article_url}>
