@@ -4,13 +4,21 @@ import Box from '../images/DescriptionBox.svg'
 
 const Container = styled.div`
 position:relative;
+width:80%;
 `
 
 const TextBox = styled.div`
-font-family:'Sofia Sans'
 position:absolute;
+top: 0em;
+width:50%;
+margin:auto;
+
+font-family: 'Sofia Sans', sans-serif;
+font-size: 32px;
+
+display:flex;
 color:red;
-top:0em;
+text-align:center;
 `
 
 const Image = styled.div`

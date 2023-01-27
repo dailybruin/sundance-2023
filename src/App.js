@@ -16,7 +16,7 @@ function App() {
 
   data && console.log(data)
 
-  return (
+  return data &&(
     <div className="App">
       <Header/>
       Hello Daily Bruin!
