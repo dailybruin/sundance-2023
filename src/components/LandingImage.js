@@ -2,8 +2,8 @@ import React, { useState, useRef, useCallback } from "react";
 import LandingGif from "./LandingGif";
 
 const LandingImage = (props) => {
-  let landingImage = props.data.landing_image;
-  let landingCredits = props.data.landing_credits;
+  let landingImage = props.landing_image;
+  let landingCredits = props.landing_credits;
 
   // DELETE and REPLACE tempLanding with landingImage once design team finishes
   let tempLanding =
@@ -27,7 +27,7 @@ const LandingImage = (props) => {
 
   return (
     <>
-      <LandingGif landingImage={landingImage} />
+      <LandingGif landing_image={landingImage} />
       <div ref={gifEndRef}></div>
       {firstTime ? scroller() : null}
       <span
