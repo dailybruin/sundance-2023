@@ -33,6 +33,7 @@ function App() {
         <div className="App">
           <Header />
           <LandingImage landing_image={Gif} landing_credits={data.landing_credits}/>
+          <FilmStrips articles={data.stories}/>
           <Footer />
         </div>
       </Container>
