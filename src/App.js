@@ -10,8 +10,11 @@ import gradientBackground from "./images/Desktop.svg";
 import Gif from "./images/landing_gif.gif";
 
 const Container = styled.div`
+  height: fit-content;
   background-image: url(${gradientBackground});
   background-size: cover;
+  background-repeat: repeat;
+  /* overflow-y: scroll; */
 `;
 
 function App() {
@@ -29,14 +32,14 @@ function App() {
 
   return (
     data && (
-      <Container>
         <div className="App">
-          <Header />
-          <LandingImage landing_image={Gif} landing_credits={data.landing_credits}/>
-          <FilmStrips articles={data.stories}/>
-          <Footer />
+          <Container>
+            <Header />
+            <LandingImage landing_image={Gif} landing_credits={data.landing_credits}/>
+            <FilmStrips articles={data.stories}/>
+            <Footer />
+          </Container>
         </div>
-      </Container>
     )
   );
 }

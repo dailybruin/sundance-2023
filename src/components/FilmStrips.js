@@ -5,18 +5,22 @@ import FilmMobile from '../images/FilmMobile.svg'
 import ArticleCard from './ArticleCard';
 import {mediaQueries} from '../shared/config';
 
-const { mobile } = mediaQueries;
 
 const Container = styled.div`
     /* width: 1472px; */
     width: 100%;
     /* max-width: 100%; */
     height: 1814px;
-    overflow: visible;
+    /* overflow: visible; */
     background-image: url(${Film});
     background-image: no-repeat;
     background-image: cover;
-    position: static;
+    /* position: static; */
+
+    ${mediaQueries.mobile} {
+        background-image: none;
+        height: fit-content;
+    }
 `;
 
 const Grid = styled.div`
@@ -24,10 +28,20 @@ const Grid = styled.div`
     width: 100%;
     grid-template-columns: repeat(4, 1fr);
     /* overflow: visible; */
-    column-gap: 2em;
+    column-gap: 1em;
     row-gap: 30.875em;
     padding-top: 1.3em;
     /* position: sticky; */
+
+    ${mediaQueries.mobile} {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: auto;
+        align-items: center;
+        row-gap: 2em;
+        padding: 0;
+    }
 `;
 
 const FilmStrips = ({articles}) => {
