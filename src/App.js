@@ -6,6 +6,9 @@ import Footer from "./components/Footer";
 import LandingImage from "./components/LandingImage";
 import FilmStrips from "./components/FilmStrips";
 import gradientBackground from "./images/Desktop.svg";
+
+import Gif from "./images/landing_gif.gif";
+
 const Container = styled.div`
   background-image: url(${gradientBackground});
   background-size: cover;
@@ -29,8 +32,7 @@ function App() {
       <Container>
         <div className="App">
           <Header />
-          <LandingImage data={data} />
-          <FilmStrips articles={data.stories}/>
+          <LandingImage landing_image={Gif} landing_credits={data.landing_credits}/>
           <Footer />
         </div>
       </Container>
