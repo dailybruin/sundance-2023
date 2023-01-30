@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import styled from "styled-components";
 import "./App.css";
 import Header from "./components/Header";
@@ -6,6 +7,7 @@ import Footer from "./components/Footer";
 import LandingImage from "./components/LandingImage";
 import FilmStrips from "./components/FilmStrips";
 import gradientBackground from "./images/Desktop.svg";
+import DescriptionBox from './components/DescriptionBox'
 
 import Gif from "./images/landing_gif.gif";
 
@@ -29,13 +31,14 @@ function App() {
   }, []);
 
   data && console.log(data);
-
+  
   return (
     data && (
         <div className="App">
           <Container>
             <Header />
             <LandingImage landing_image={Gif} landing_credits={data.landing_credits}/>
+            <DescriptionBox description_box={data.description_box}/>
             <FilmStrips articles={data.stories}/>
             <Footer />
           </Container>
