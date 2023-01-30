@@ -14,7 +14,6 @@ const Container = styled.div`
   width: 100%;
   height: fit-content;
   position: relative;
-  background-color: #EDE8E5;
   display: flex;
   flex-direction: column;
   align-items: center;
