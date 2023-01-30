@@ -70,8 +70,9 @@ const Footer = () => {
           <img src={email} />
         </a>
         <p>
-          Built with Suzy’s ♥ in Kerckhoff 118 by [developers]. Designed by
-          [designers].
+          Built with Suzy’s ♥ in Kerckhoff 118 by Angela Tan, Donny Rimer, Ed Nawrocki, 
+          Elaine Lin, Erika Tran, Justin Hee, Nicole Ju, Sakshi Thoutireddy, Sujay Jain, Tracy Zhao, and Yifan Tang. Designed by
+          Helen Quach.
         </p>
       </Socials>
     </Container>

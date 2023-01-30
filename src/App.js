@@ -5,14 +5,18 @@ import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import LandingImage from "./components/LandingImage";
+import FilmStrips from "./components/FilmStrips";
 import gradientBackground from "./images/Desktop.svg";
 import DescriptionBox from './components/DescriptionBox'
 
 import Gif from "./images/landing_gif.gif";
 
 const Container = styled.div`
+  height: fit-content;
   background-image: url(${gradientBackground});
   background-size: cover;
+  background-repeat: repeat;
+  /* overflow-y: scroll; */
 `;
 
 function App() {
@@ -30,14 +34,15 @@ function App() {
   
   return (
     data && (
-      <Container>
         <div className="App">
-          <Header />
-          <LandingImage landing_image={Gif} landing_credits={data.landing_credits}/>
-          <DescriptionBox description_box={data.description_box}/>
-          <Footer />
+          <Container>
+            <Header />
+            <LandingImage landing_image={Gif} landing_credits={data.landing_credits}/>
+            <DescriptionBox description_box={data.description_box}/>
+            <FilmStrips articles={data.stories}/>
+            <Footer />
+          </Container>
         </div>
-      </Container>
     )
   );
 }

@@ -1,5 +1,21 @@
 import React, { useState, useRef, useCallback } from "react";
 import LandingGif from "./LandingGif";
+import styled from 'styled-components';
+import {mediaQueries} from '../shared/config';
+
+const Credits = styled.div`
+  float: right;
+  color: white;
+  margin-right: 10px;
+  padding-top: 0.5em;
+  font-size: 18px;
+  font-family: Sofia Sans;
+
+  ${mediaQueries.mobile} {
+    font-size: 14px;
+  }
+`;
+
 
 const LandingImage = (props) => {
   let landingImage = props.landing_image;
@@ -30,19 +46,9 @@ const LandingImage = (props) => {
       <LandingGif landing_image={landingImage} />
       <div ref={gifEndRef}></div>
       {firstTime ? scroller() : null}
-      <span
-        style={{
-          display: "inline-block",
-          float: "right",
-          color: "white",
-          marginRight: "10px",
-          marginTop: "10px",
-          fontSize: "16px",
-          fontFamily: "Sofia Sans",
-        }}
-      >
+      <Credits>
         {landingCredits}
-      </span>
+      </Credits>
     </>
   );
 };
