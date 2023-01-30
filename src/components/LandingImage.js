@@ -39,14 +39,12 @@ const LandingImage = (props) => {
         gifEndRef.current.scrollIntoView({ behavior: "smooth" });
         setFirstTime(false);
       }
-    }, 5000);
+    }, 4000);
 
   }, [gifEndRef]);
 
   return (
     <>
-      {/* <LandingGif landing_image={landingImage} />
-      <LandingGif landing_image={landingStill}/> */}
       {firstTime ? <LandingGif landing_image={landingImage} /> : <LandingGif landing_image={landingStill}/>}
       <div ref={gifEndRef}></div>
       {firstTime ? scroller() : null}

@@ -10,6 +10,7 @@ import gradientBackground from "./images/Desktop.svg";
 import DescriptionBox from './components/DescriptionBox'
 
 import Gif from "./images/landing_gif.gif";
+// import Gif from "./images/landing_gif_short.gif";
 
 const Container = styled.div`
   height: fit-content;

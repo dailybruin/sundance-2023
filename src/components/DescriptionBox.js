@@ -33,6 +33,7 @@ const TextBox = styled.div`
     text-align: center;
 
     font-family: 'Sofia Sans', sans-serif;
+    font-weight:900;
     font-size: 18px;
     color: black;
     text-align: center;
@@ -40,7 +41,7 @@ const TextBox = styled.div`
 
     ${mediaQueries.mobile} {
         width: 60vw;
-        font-size: 12px;
+        font-size: 8px;
     }
 `
 

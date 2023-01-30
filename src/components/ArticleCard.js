@@ -113,7 +113,7 @@ export default function ArticleCard(props){
             <Link href={props.article_url}><Image src={props.article_image}/></Link>
             <ArticleInfo>
                 <Title href={props.article_url}> {props.article_title}</Title>
-                <Author> Author {props.article_byline} </Author>
+                <Author> By {props.article_byline} </Author>
             </ArticleInfo>
         </Container>
     )
