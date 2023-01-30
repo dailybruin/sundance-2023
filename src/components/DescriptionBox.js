@@ -23,25 +23,25 @@ const Container = styled.div`
 
 const TextBox = styled.div`
     position: absolute;
-    top: 2em;
     width: 70%;
-    max-width: 50%;
+    /* max-width: 60%; */
 
-    margin-top: 3em;
+    /* margin-top: 3em; */
     margin-left: auto;
     margin-right: auto;
-    left: 0;
-    right: 0;
+    margin-top: auto;
+    margin-bottom: auto;
     text-align: center;
 
     font-family: 'Sofia Sans', sans-serif;
-    font-size: 30px;
+    font-size: 18px;
     color: black;
     text-align: center;
 
+
     ${mediaQueries.mobile} {
         width: 60vw;
-        font-size: 18px;
+        font-size: 12px;
     }
 `
 
