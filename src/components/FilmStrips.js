@@ -30,7 +30,7 @@ const Grid = styled.div`
     /* overflow: visible; */
     column-gap: 1em;
     row-gap: 30.875em;
-    padding-top: 1.3em;
+    padding-top: 2.9em;
     /* position: sticky; */
 
     grid-template-areas: 
