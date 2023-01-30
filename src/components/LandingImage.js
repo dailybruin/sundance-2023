@@ -20,6 +20,7 @@ const Credits = styled.div`
 const LandingImage = (props) => {
   let landingImage = props.landing_image;
   let landingCredits = props.landing_credits;
+  let landingStill = props.landing_still;
 
   // DELETE and REPLACE tempLanding with landingImage once design team finishes
   let tempLanding =
@@ -39,11 +40,14 @@ const LandingImage = (props) => {
         setFirstTime(false);
       }
     }, 5000);
+
   }, [gifEndRef]);
 
   return (
     <>
-      <LandingGif landing_image={landingImage} />
+      {/* <LandingGif landing_image={landingImage} />
+      <LandingGif landing_image={landingStill}/> */}
+      {firstTime ? <LandingGif landing_image={landingImage} /> : <LandingGif landing_image={landingStill}/>}
       <div ref={gifEndRef}></div>
       {firstTime ? scroller() : null}
       <Credits>
