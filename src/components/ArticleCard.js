@@ -12,10 +12,6 @@ export default function ArticleCard(props){
         width: 100%;
         height: 245px;
         border-radius: 10px;
-        /* background-image: url(${props.article_image});
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat; */
         font-family: 'Sofia Sans', sans-serif;
         text-align: left;
         box-sizing: border-box;
@@ -26,32 +22,9 @@ export default function ArticleCard(props){
             background-size: cover;
             background-repeat: no-repeat;
             border-radius: 0px;
+            width: 100vw;
         }
-    `
 
-    const Title = styled.div`
-        font-weight: 800;
-        font-size: 28px;
-        padding: 1em 1em 0.5em 1em;
-        line-height: 1em;
-        letter-spacing: -0.05em;
-        color: white;
-
-        ${mediaQueries.mobile} {
-            font-size: 24px;
-        }
-    `
-
-    const Author = styled.div`
-        margin-left: 1.5em;
-        font-weight: 400;
-        font-size: 20px;
-        letter-spacing: -0.05em;
-        color: white;
-
-        ${mediaQueries.mobile} {
-            font-size: 18px;
-        }
     `
 
     const ArticleInfo = styled.div`  
@@ -76,6 +49,34 @@ export default function ArticleCard(props){
             height: 75%;
             bottom: 2em;
             border-radius: 0px;
+        }
+    `
+
+    const Title = styled.a`
+        display: inline-block;
+        font-weight: 800;
+        font-size: 28px;
+        padding: 1em 1em 0.5em 1em;
+        line-height: 1em;
+        letter-spacing: -0.05em;
+        color: white;
+        text-align: left;
+        text-decoration: none;
+        
+        ${mediaQueries.mobile} {
+            font-size: 24px;
+        }
+    `
+
+    const Author = styled.div`
+        margin-left: 1.5em;
+        font-weight: 400;
+        font-size: 20px;
+        letter-spacing: -0.05em;
+        color: white;
+
+        ${mediaQueries.mobile} {
+            font-size: 18px;
         }
     `
 
@@ -104,18 +105,14 @@ export default function ArticleCard(props){
             align-items: center;
         }
     `
+   
 
 
-    return(
+    return (
         <Container>
-            
-            {/* <a style={{textDecoration: "none", marginLeft: 0}} href={props.article_url}>
-                <Title> {props.article_title}</Title>
-            </a> */}
-
             <Link href={props.article_url}><Image src={props.article_image}/></Link>
             <ArticleInfo>
-                <Title> {props.article_title}</Title>
+                <Title href={props.article_url}> {props.article_title}</Title>
                 <Author> Author {props.article_byline} </Author>
             </ArticleInfo>
         </Container>

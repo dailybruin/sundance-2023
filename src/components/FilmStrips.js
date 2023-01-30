@@ -33,14 +33,55 @@ const Grid = styled.div`
     padding-top: 1.3em;
     /* position: sticky; */
 
+    grid-template-areas: 
+      "one two three ."
+      ". four five six"
+      "seven eight nine .";
+
     ${mediaQueries.mobile} {
         display: flex;
         flex-direction: column;
-        width: 100%;
+        /* width: 100%; */
         margin: auto;
         align-items: center;
         row-gap: 2em;
         padding: 0;
+    }
+
+    .article_one {
+      grid-area: one;
+    }
+
+    .article_two {
+      grid-area: two;
+    }
+
+    .article_three {
+      grid-area: three;
+    }
+
+    .article_four {
+      grid-area: four;
+    }
+
+    .article_five {
+      grid-area: five;
+    }
+
+    .article_six {
+      grid-area: six;
+    }
+
+    .article_seven {
+      grid-area: seven;
+    }
+
+    .article_eight {
+      grid-area: eight;
+    }
+
+    .article_nine {
+      grid-area: nine;
     }
 `;
 
@@ -49,15 +90,18 @@ const FilmStrips = ({articles}) => {
         <Container >
             <Grid>  
               {articles ? articles.map((item) => {
-                      return (
-                          <ArticleCard
-                          article_title={item.article_title}
-                          article_byline={item.article_byline}
-                          article_image={item.article_image}
-                          article_url={item.article_url}
-                          color={item.color}
-                      />
-                      );
+                    const articleArea = `article_${item.number}`;
+
+                    return (
+                        <div class={articleArea}>
+                            <ArticleCard
+                                article_title={item.article_title}
+                                article_byline={item.article_byline}
+                                article_image={item.article_image}
+                                article_url={item.article_url}
+                            />
+                        </div>
+                    );
                   })
               : null}
           </Grid>
